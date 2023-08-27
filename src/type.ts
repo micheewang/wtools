@@ -1,3 +1,6 @@
+/**
+ * like typeof, but type(null) === 'null'
+ */
 function type(value: any) {
   if (value === null) {
     return "null";
@@ -14,7 +17,7 @@ type.isNull = function isNull(value: any): value is null {
   return type(value) === "null";
 };
 
-type.isUndefined = function isNull(value: any): value is undefined {
+type.isUndefined = function isUndefined(value: any): value is undefined {
   return type(value) === "undefined";
 };
 
@@ -48,7 +51,7 @@ type.isObject = function isObject(value: any): value is object {
   return type(value) === "object";
 };
 
-type.isBoolean = function isObject(value: any): value is boolean {
+type.isBoolean = function isBoolean(value: any): value is boolean {
   return type(value) === "boolean";
 };
 

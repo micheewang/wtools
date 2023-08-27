@@ -1,7 +1,10 @@
+/**
+ * replace array item
+ */
 export default function replaceArrayItem<T>(
   array: T[],
-  replacedItem: T,
+  replaced: T,
   newItem: T,
 ): T[] {
-  return array.map((item) => (item === replacedItem ? newItem : item));
+  return array.map((item) => (item === replaced ? newItem : item));
 }

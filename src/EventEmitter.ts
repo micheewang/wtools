@@ -20,6 +20,7 @@ export default class EventEmitter<T extends Event> {
     this.__store[name]!.push(handle);
     const key = Symbol();
     this.__keyStore.set(key, { name, handle });
+
     return key;
   }
 
@@ -38,11 +39,9 @@ export default class EventEmitter<T extends Event> {
    */
   public off(key: symbol) {
     const event = this.__keyStore.get(key);
-    if (!event) {
-      return;
-    }
-    const { name, handle } = event;
+    if (!event) return;
 
+    const { name, handle } = event;
     this.__store[name] = removeArrayItem(this.__store[name] ?? [], handle);
   }
 
