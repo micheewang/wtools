@@ -16,12 +16,13 @@ class HtmlEntites {
     apos: "'",
   };
 
-  private __div: any;
-  //= document.createElement("div");
+  private __div: HTMLDivElement | null = null;
 
   private readonly __htmlEntites = /&(#(\d+)|#x([\da-fA-F]+)|\w+);?/;
 
   decode(t: string) {
+    this.__div ??= document.createElement("div");
+
     return t.replace(this.__htmlEntites, ($1, $2, $3, $4) => {
       if (this.__cache[$1]) {
         return this.__cache[$1];
@@ -33,8 +34,8 @@ class HtmlEntites {
       } else if ($3) {
         char = String.fromCharCode(parseInt($3, 10));
       } else {
-        this.__div.innerHTML = $1;
-        char = this.__div.innerText;
+        this.__div!.innerHTML = $1;
+        char = this.__div!.innerText;
       }
 
       this.__cache[$1] = char;
