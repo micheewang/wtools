@@ -43,7 +43,7 @@ describe("curry test", () => {
   });
 
   test("function like", () => {
-    const fn = jest.fn() as any;
+    const fn = jest.fn();
     const f1 = curry({ __length: 3, __args: [], __fn: fn })(1, 2);
     expect(fn).toBeCalledTimes(0);
     f1(3);

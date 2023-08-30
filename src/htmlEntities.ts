@@ -1,6 +1,6 @@
 import type from "./type";
 
-class HtmlEntites {
+class HtmlEntities {
   private __cache: Record<string, string> = {
     nbsp: " ",
     cent: "¢",
@@ -69,4 +69,4 @@ class HtmlEntites {
   }
 }
 
-export default new HtmlEntites();
+export default new HtmlEntities();
