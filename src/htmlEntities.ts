@@ -18,12 +18,12 @@ class HtmlEntities {
 
   private __div: HTMLDivElement | null = null;
 
-  private readonly __htmlEntites = /&(#(\d+)|#x([\da-fA-F]+)|\w+);?/;
+  private readonly __htmlEntities = /&(#(\d+)|#x([\da-fA-F]+)|\w+);?/;
 
   decode(t: string) {
     this.__div ??= document.createElement("div");
 
-    return t.replace(this.__htmlEntites, ($1, $2, $3, $4) => {
+    return t.replace(this.__htmlEntities, ($1, $2, $3, $4) => {
       if (this.__cache[$1]) {
         return this.__cache[$1];
       }

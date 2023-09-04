@@ -48,7 +48,7 @@ export default class EventEmitter<T extends Event> {
   /**
    * trigger event
    */
-  public emit(name: T, ...args: Parameters<T[keyof T]>) {
+  public emit<K extends keyof T>(name: K, ...args: Parameters<T[K]>) {
     this.__store[name]?.forEach((handle) => handle(...args));
   }
 }

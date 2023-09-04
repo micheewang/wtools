@@ -6,7 +6,7 @@ describe("replace array item", () => {
   const replaceIndex = 1;
   const newItem = {};
 
-  test("basic function", () => {
+  test("replace array item", () => {
     const newArray = replaceArrayItem(array, array[replaceIndex], newItem);
     expect(newArray).not.toBe(array);
     for (const key of array.keys()) {

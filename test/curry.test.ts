@@ -18,7 +18,7 @@ describe("curry test", () => {
     expect(fn).toBeCalledWith(3, 2, 1);
   });
 
-  test("fixed arguement", () => {
+  test("fixed arguments", () => {
     const fn = jest.fn();
     const f1 = curry(fn, 3)(1, 2);
     expect(fn).toBeCalledTimes(0);
@@ -34,7 +34,7 @@ describe("curry test", () => {
     expect(fn).toBeCalledWith(1, 2, 0, 3);
   });
 
-  test("overload arguement", () => {
+  test("overload arguments", () => {
     const fn = jest.fn();
     const f1 = curry(fn, 3)(1, 2);
     expect(fn).toBeCalledTimes(0);

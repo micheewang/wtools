@@ -1,7 +1,7 @@
 import { describe, expect, test } from "@jest/globals";
 import { deepClone } from "../src";
 
-describe("to Map", () => {
+describe("deep clone", () => {
   const object = {
     object: [
       { key: 1, value: "key1" },

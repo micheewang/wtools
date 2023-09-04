@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import toMap from "../src/toMap";
+import { toMap } from "../src";
 
 describe("to Map", () => {
   const array = [
